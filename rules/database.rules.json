@@ -1,0 +1,28 @@
+{
+  "rules": {
+    "access": {
+      ".write": "auth != null && auth.token.email_verified == true",
+      ".read": "auth != null && auth.token.email_verified == true && auth.token.email.matches(/.*@gmail.com$/)"
+    },
+    "forms": {
+      ".write": "auth != null && auth.token.email_verified == true && auth.token.email.matches(/.*@gmail.com$/)",
+      ".read": "auth != null && auth.token.email_verified == true"
+    },
+    "responses": {
+      ".write": "auth != null && auth.token.email_verified == true",
+      ".read": "auth != null && auth.token.email_verified == true && auth.token.email.matches(/.*@gmail.com$/)"
+    },
+    "users": {
+      "$uid": {
+        ".write": "auth != null",
+        ".read": "auth != null && auth.token.email_verified == true"
+      },
+      ".indexOn": ["email"],
+      ".read": "auth != null && auth.token.email_verified == true && auth.token.email.matches(/.*@gmail.com$/)"
+    },
+    "workflows": {
+      ".write": "auth != null && auth.token.email_verified == true && auth.token.email.matches(/.*@gmail.com$/)",
+      ".read": "auth != null && auth.token.email_verified == true"
+    }
+  }
+}

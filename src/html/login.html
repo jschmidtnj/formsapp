@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123955306-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-123955306-1');
+    </script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="title" content="Workflow">
+	<meta name="description" content="">
+	<meta name="author" content="Joshua Schmidt">
+	<link rel="icon" href="assets/icons/favicon.ico">
+	<!-- Bootstrap core CSS -->
+	<script src="assets/js/global/bootstrapcss.js"></script>
+
+	<!-- Custom styles for this template -->
+	<link href="assets/css/login.css" rel="stylesheet">
+</head>
+
+<section id="alerts">
+	<div class="container" id="alertscontainer" style="position:fixed; z-index:1; margin:5%;">
+		<div class="alert alert-success collapse" role="alert" id="alertloginsuccess">
+			<h5 class="alert-heading">Logged In</h5>
+			<hr>
+			<p class="mb-0">Redirecting to Dashboard.</p>
+		</div>
+		<div class="alert alert-danger collapse" role="alert" id="alertloginfailure">
+			<h5 class="alert-heading">Login Failed</h5>
+			<hr>
+			<p class="mb-0">
+				<div id="error-info"></div>
+			</p>
+		</div>
+	</div>
+</section>
+
+<body class="my-login-page">
+	<header class="masthead mb-auto">
+		<div class="inner">
+			<nav class="nav nav-masthead justify-content-center">
+				<a class="nav-link active" href="index.html">Home</a>
+				<a class="nav-link" href="register.html">Sign Up</a>
+				<a class="nav-link" href="login.html">Login</a>
+			</nav>
+		</div>
+	</header>
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center h-100">
+				<div class="card-wrapper">
+					<div class="brand">
+						<img src="assets/images/loginLogo.jpg">
+					</div>
+					<div class="card fat">
+						<div class="card-body">
+							<h4 class="card-title">Login</h4>
+							<form id="loginForm">
+								<div class="form-group">
+									<label class="control-label" for="email">E-Mail Address</label>
+									<input id="email" type="text" class="form-control" name="email" value="" required autofocus>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label" for="password">Password
+										<a href="forgot.html" class="float-right">
+											Forgot Password?
+										</a>
+									</label>
+									<input id="password" type="password" class="form-control" name="password" required data-eye>
+								</div>
+
+								<div class="form-group">
+									<label>
+										<input type="checkbox" name="remember"> Remember Me
+									</label>
+								</div>
+							</form>
+							<div class="form-group no-margin">
+								<button value="Sign in" class="btn btn-primary btn-block onclick="void(0)"" id="loginSubmitEmail">
+									Login
+								</button>
+							</div>
+							<div class="margin-top20 text-center">
+								Don't have an account?
+								<a href="register.html">Create One</a>
+							</div>
+							<br/>
+							<br/>
+							<div class="google-login-container d-flex justify-content-center">
+								<div class="google-login-picture" id="loginSubmitGoogle"></div>
+							</div>
+						</div>
+					</div>
+					<div class="footer">
+						Copyright &copy; 2018 &mdash; Colgate-Palmolive
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="assets/js/login/login.js"></script>
+
+</body>
+
+</html>

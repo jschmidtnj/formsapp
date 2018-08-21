@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="assets/icons/favicon.ico">
+
+  <title>Build Form</title>
+
+  <!-- Bootstrap core CSS -->
+  <script src="assets/js/global/bootstrapcss.js"></script>
+
+  <!-- Custom styles for this template -->
+  <link href="assets/css/create.css" rel="stylesheet">
+
+</head>
+
+<section id="alerts">
+  <div class="container" id="alertscontainer" style="position:fixed; z-index:1; margin:5%;">
+    <div class="alert alert-success collapse" role="alert" id="alertsignoutsuccess">
+      <h5 class="alert-heading">Signing Out</h5>
+      <hr>
+      <p class="mb-0">Redirecting to Login.</p>
+    </div>
+    <div class="alert alert-success collapse" role="alert" id="alertsavesuccess">
+      <h5 class="alert-heading">Form Saved</h5>
+      <hr>
+      <p class="mb-0">See form in console.</p>
+    </div>
+    <div class="alert alert-danger collapse" role="alert" id="alertsignoutfailure">
+      <h5 class="alert-heading">Error</h5>
+      <hr>
+      <p class="mb-0">
+        <div id="error-info"></div>
+      </p>
+    </div>
+  </div>
+</section>
+
+<body class="text-center">
+
+  <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <h3 class="masthead-brand">Workflow</h3>
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link active" href="index.html">Home</a>
+          <a class="nav-link" href="edit.html">Form Builder</a>
+          <a class="nav-link" href="user.html">My Forms</a>
+          <a class="nav-link" href="#" id="logoutButton">Logout</a>
+        </nav>
+      </div>
+    </header>
+
+    <main role="main">
+      <p id="saving-status"></p>
+      <br/>
+      <br/>
+      <div id="form-builder"></div>
+      <button value="Save" class="btn btn-primary btn-block collapse onclick="void(0)"" id="saveForm">
+        Save
+      </button>
+      <button value="Clear" class="btn btn-primary btn-block collapse onclick="void(0)"" id="clearForm">
+        Clear
+      </button>
+    </main>
+
+    <footer class="mastfoot mt-auto">
+      <div class="inner">
+        <p>Footer</p>
+      </div>
+    </footer>
+  </div>
+
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/create/create.js"></script>
+
+</body>
+
+</html>
