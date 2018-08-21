@@ -71,7 +71,6 @@ Thumbs.db
 # Secret file
 config.js
 config.json
-config/
 
 # Typings definitions
 typings
