@@ -56,15 +56,18 @@ function createWorkflowGenerator() {
             }
         }
         if (!($("#workflow-builder").valid())) {
-            workflowData = "";
+            workflowData = [];
         }
         //console.log(workflowData);
+        if (workflowData !== undefined) {
+            //console.log(workflowData.length);
+        }
         var dateTime = Date.now();
         //var user = firebase.auth().currentUser;
         //console.log(workflowId);
         if (workflowId !== "") {
             //console.log(JSON.stringify(workflowData), workflowId);
-            if (workflowData == undefined || workflowData == "") {
+            if (workflowData == undefined || workflowData == [] || workflowData.length == 0) {
                 firebase.database().ref('workflows/' + workflowId).remove();
                 firebase.database().ref('access/workflows/workflowsbyuser/' + window.userId + '/' + workflowId).remove();
                 firebase.database().ref('access/workflows/workflowsbyid/' + workflowId + '/' + window.userId).remove();
@@ -111,7 +114,7 @@ function createWorkflowGenerator() {
                 });
             }
         } else {
-            if (workflowData !== undefined && workflowData !== "") {
+            if (workflowData !== undefined && workflowData !== [] && workflowData.length !== 0) {
                 savedBefore = true;
                 if (workflowId == "") {
                     //console.log(workflowId);
@@ -192,6 +195,12 @@ function createWorkflowGenerator() {
                 }
             }
         }, config.other.savetimeout);
+
+        $("#saveFlow").removeClass("collapse");
+        $("#saveFlow").on('click touchstart', function () {
+            autosavemode = false;
+            saveWorkflow();
+        });
 
         $("#addEntry").removeClass("collapse");
         //comment this out to disable autosave initially
@@ -315,8 +324,8 @@ function addWorkflowEntry() {
     }
     var entrycountstr = '' + entrycount;
     entryid = entryid + entrycountstr;
-    $("#workflow-container").append("<div class=\"row\"><div class=\"col-sm\"><div class=\"form-group\"><input type=\"text\" id=\"" +
-        entryid + "\" class=\"form-control\" name=\"workflow\"></div></div><div class=\"col-sm\"><button class=\"entryDelete btn btn-primary btn-block onclick=\"void(0)\"\">Delete</button></div></div>");
+    $("#workflow-container").append("<div class=\"row justify-content-center\"><div class=\"col-5\"><div class=\"form-group\"><input type=\"text\" id=\"" +
+        entryid + "\" class=\"form-control\" name=\"workflow\"></div></div><div class=\"col-sm-2\"><button class=\"entryDelete btn btn-primary btn-block onclick=\"void(0)\"\">Delete</button></div></div>");
     $("#" + entryid).rules("add", {
         regex: config.regex.commaseperatedemails,
         messages: {
@@ -336,6 +345,9 @@ function addWorkflowEntry() {
 }
 
 $(document).ready(function () {
+
+    $('#toslink').attr('href', config.other.tosUrl);
+    $('#privacypolicylink').attr('href', config.other.privacyPolicyUrl);
 
     $("#name").focus(function () {
         $(this).select();

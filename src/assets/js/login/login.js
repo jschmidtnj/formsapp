@@ -148,6 +148,10 @@ function checkForRedirect() {
 }
 
 $(document).ready(function () {
+
+    $('#toslink').attr('href', config.other.tosUrl);
+    $('#privacypolicylink').attr('href', config.other.privacyPolicyUrl);
+
     checkForRedirect();
     checkIfLoggedin();
 

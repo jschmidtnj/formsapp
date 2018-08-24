@@ -43,7 +43,7 @@ function getInitialValues() {
         var username = userDataVal.username;
         $("#username").val(username);
         if (window.userstatus == "employee") {
-            console.log("employee");
+            //console.log("employee");
             var approvenotificationssetting = userDataVal.notificationsettings.emailapprove;
             if (approvenotificationssetting) {
                 $("#approvenotificationslabel").text("On");
@@ -53,7 +53,7 @@ function getInitialValues() {
                 $("#approvenotifications").prop('checked', false);
             }
         } else if (window.userstatus == "nonemployee") {
-            console.log("nonemployee");
+            //console.log("nonemployee");
         }
     }).catch(function (err) {
         handleError(err);
@@ -61,6 +61,10 @@ function getInitialValues() {
 }
 
 $(document).ready(function () {
+
+    $('#toslink').attr('href', config.other.tosUrl);
+    $('#privacypolicylink').attr('href', config.other.privacyPolicyUrl);
+
     var signed_in_initially = false;
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
@@ -92,13 +96,13 @@ $(document).ready(function () {
             if (window.userstatus == "employee") {
                 $("#changeNotificationsCollapse").removeClass("collapse");
                 $("#approvenotifications").change(function () {
-                    console.log("changing approve notification setting");
+                    //console.log("changing approve notification setting");
                     var checked = this.checked;
                     if (checked) {
-                        console.log("check");
+                        //console.log("check");
                         data = true;
                     } else {
-                        console.log("uncheck");
+                        //console.log("uncheck");
                         data = false;
                     }
                     var notificationsettingsData = {
@@ -115,13 +119,16 @@ $(document).ready(function () {
                 $("#changeNotificationsCollapse").addClass("collapse");
             }
             getInitialValues();
-            console.log(window.userstatus);
+            //console.log(window.userstatus);
+            //console.log(window.userId);
             firebase.database().ref('users/' + window.userId).once('value').then(function (userData) {
                 //console.log("getting user data");
                 var signintype = userData.val().signintype;
                 //console.log(signintype);
                 if (signintype == "email") {
                     $("#changePasswordCollapse").removeClass("collapse");
+                } else {
+                    $("#changePasswordCollapse").addClass("collapse");
                 }
             }).catch(function (err) {
                 handleError(err);

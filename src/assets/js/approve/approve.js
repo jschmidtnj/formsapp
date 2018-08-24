@@ -48,6 +48,9 @@ var tableInitialized = false;
 
 $(document).ready(function () {
 
+    $('#toslink').attr('href', config.other.tosUrl);
+    $('#privacypolicylink').attr('href', config.other.privacyPolicyUrl);
+
     $.fn.dataTable.ext.type.order['accept-regect-pre'] = function (d) {
         if (d.substring(0, 7) == "<button") {
             return 0;
@@ -155,7 +158,7 @@ $(document).ready(function () {
                             }).catch(function (err) {
                                 handleError(err);
                             }).then(function () {
-                                console.log("sending rejected email notification");
+                                //console.log("sending rejected email notification");
                                 var sendEmails = firebase.functions().httpsCallable('sendApprovedRejectedEmailNotification');
                                 sendEmails({
                                     responseId: responseId,
@@ -164,8 +167,8 @@ $(document).ready(function () {
                                     // Read result of the Cloud Function.
                                     //console.log(result);
                                     var statusMessage = result.data.status;
-                                    console.log(statusMessage);
-                                    console.log("form rejected by admin");
+                                    //console.log(statusMessage);
+                                    //console.log("form rejected by admin");
                                 }).catch(function (error) {
                                     // Getting the Error details.
                                     //console.log(error);
@@ -392,7 +395,7 @@ $(document).ready(function () {
                                 })
                             }
                             if (i == nextapprovallen - 1 && newStatus == "pending") {
-                                console.log("sending approval email notification");
+                                //console.log("sending approval email notification");
                                 var sendEmails = firebase.functions().httpsCallable('sendApprovedRejectedEmailNotification');
                                 sendEmails({
                                     responseId: responseKey,
@@ -401,8 +404,8 @@ $(document).ready(function () {
                                     // Read result of the Cloud Function.
                                     //console.log(result);
                                     var statusMessage = result.data.status;
-                                    console.log(statusMessage);
-                                    console.log("form approved sent to next party");
+                                    //console.log(statusMessage);
+                                    //console.log("form approved sent to next party");
                                 }).catch(function (error) {
                                     // Getting the Error details.
                                     //console.log(error);
@@ -413,7 +416,7 @@ $(document).ready(function () {
                         setTimeout(function () {
                             if (newStatus == "approved") {
                                 //console.log("approved the submission");
-                                console.log("sending approved email notification");
+                                //console.log("sending approved email notification");
                                 var sendEmails = firebase.functions().httpsCallable('sendApprovedRejectedEmailNotification');
                                 sendEmails({
                                     responseId: responseKey,
@@ -422,8 +425,8 @@ $(document).ready(function () {
                                     // Read result of the Cloud Function.
                                     //console.log(result);
                                     var statusMessage = result.data.status;
-                                    console.log(statusMessage);
-                                    console.log("form approved notification sent");
+                                    //console.log(statusMessage);
+                                    //console.log("form approved notification sent");
                                 }).catch(function (error) {
                                     // Getting the Error details.
                                     //console.log(error);
@@ -488,7 +491,7 @@ $(document).ready(function () {
                     handleError(error);
                 }).then(function () {
                     //console.log("rejected the submission");
-                    console.log("sending rejection email notification");
+                    //console.log("sending rejection email notification");
                     var sendEmails = firebase.functions().httpsCallable('sendApprovedRejectedEmailNotification');
                     sendEmails({
                         responseId: responseKey,
@@ -497,8 +500,8 @@ $(document).ready(function () {
                         // Read result of the Cloud Function.
                         //console.log(result);
                         var statusMessage = result.data.status;
-                        console.log(statusMessage);
-                        console.log("form rejected email sent");
+                        //console.log(statusMessage);
+                        //console.log("form rejected email sent");
                     }).catch(function (error) {
                         // Getting the Error details.
                         //console.log(error);

@@ -16,25 +16,29 @@ var config = {
         "client_x509_cert_url": "url"
     },
     "approvalNotificationEmailData": {
-        "FromEmail": "my@email.com",
-        "FromName": "My Name",
-        "template": "<h1>Hello {{name}}!</h1>"
+        "FromEmail": "email@example.com",
+        "FromName": "Forms App"
     },
     "approvedNotificationEmailData": {
-        "FromEmail": "my@email.com",
-        "FromName": "My Name",
-        "template": "<h1>Hello {{name}}!</h1>"
+        "FromEmail": "email@example.com",
+        "FromName": "Forms App"
     },
     "rejectedNotificationEmailData": {
-        "FromEmail": "my@email.com",
-        "FromName": "My Name",
-        "template": "<h1>Hello {{name}}!</h1>"
+        "FromEmail": "email@example.com",
+        "FromName": "Forms App"
     },
     "other": {
         "databaseurl": "url",
         "maxconcurrentaccountdeletions": "3",
         "daysofinactivity": "1",
-        "cronjoburl": "https://app.cloudfunctions.net/accountcleanup?key=key"
+        "cronjoburl": "https://app.cloudfunctions.net/accountcleanup?key=key",
+        "indexaddress": "https://formsapp-9fe5b.firebaseapp.com/",
+        "logoimagesrc": "assets/images/colpallogo_red.png",
+        "heroimagesrc": "assets/images/emailheroimage.png",
+        "privacypolicyurl": "https://www.colgatepalmolive.com/en-us/legal-privacy-policy/privacy-policy",
+        "termsofserviceurl": "https://shop.colgate.com/pages/terms-of-service",
+        "address": "909 River Rd, Piscataway Township, NJ 08854",
+        "phonenumber": "(732) 878-7500"
     }
 }
 

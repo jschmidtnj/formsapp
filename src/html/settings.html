@@ -17,14 +17,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1,
             shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="assets/icons/favicon.ico">
+    <meta name="title" content="Workflow">
+    <meta name="description" content="Build Forms and Approve Flow">
+    <meta name="author" content="Joshua Schmidt">
+    <title>Settings</title>
 
-    <title>Build Form</title>
+    <link rel="icon" href="assets/icons/favicon.ico">
 
     <!-- Bootstrap core CSS -->
     <script src="assets/js/global/bootstrapcss.js"></script>
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Global Navbar -->
+    <link href="assets/css/global.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="assets/css/settings.css" rel="stylesheet">
@@ -66,7 +75,7 @@
             </h5>
             <p class="mb-0">This action cannot be undone.</p>
             <hr>
-            <button value="Comfirm" class="btn btn-primary btn-block onclick=" void(0) "" id="confirmDelete">
+            <button value="Comfirm" class="btn btn-primary onclick=" void(0) "" id="confirmDelete">
                 Confirm
             </button>
         </div>
@@ -74,18 +83,44 @@
 </section>
 
 <body class="text-center">
-
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
         <header id="headermain" class="collapse masthead mb-auto">
             <div class="inner">
                 <h3 class="masthead-brand">Workflow</h3>
-                <nav class="nav nav-masthead justify-content-center">
-                    <a class="nav-link active" href="dashboard.html">Dashboard</a>
-                    <a class="nav-link" href="user.html">Forms</a>
-                    <a class="nav-link" href="flows.html">Workflow</a>
-                    <a class="nav-link" href="approve.html">Approve</a>
-                    <a class="nav-link" href="settings.html">Settings</a>
-                    <a class="nav-link logoutButton" href="#">Logout</a>
+                <!-- Navigation -->
+                <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+                    <div class="container">
+                        <a class="navbar-brand js-scroll-trigger" href="index.html">
+                            Workflow
+                        </a>
+                        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                            Menu
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarResponsive">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="dashboard.html">Dashboard</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="user.html">Forms</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="flows.html">Workflow</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="approve.html">Approve</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="settings.html">Settings</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link logoutButton" href="#" id="logoutButton">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </nav>
             </div>
         </header>
@@ -93,15 +128,40 @@
         <header id="headeralternate" class="collapse masthead mb-auto">
             <div class="inner">
                 <h3 class="masthead-brand">Workflow</h3>
-                <nav class="nav nav-masthead justify-content-center">
-                    <a class="nav-link" href="responses.html">Submissions</a>
-                    <a class="nav-link" href="settings.html">Settings</a>
-                    <a class="nav-link logoutButton" href="#">Logout</a>
+                <!-- Navigation -->
+                <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+                    <div class="container">
+                        <a class="navbar-brand js-scroll-trigger" href="index.html">
+                            <img src="assets/images/colpallogo_black.png" style="width: 200px; margin-right:1em;" />Workflow
+                        </a>
+                        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                            Menu
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarResponsive">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="responses.html">Submissions</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="settings.html">Settings</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link logoutButton" href="#" id="logoutButton">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </nav>
             </div>
         </header>
 
-        <main role="main">
+        <main role="main" class="main">
+            <br/>
+            <h4>Settings</h4>
+            <br/>
+            <br/>
             <div id="bodycollapse" class="collapse">
                 <br/>
                 <h5>Email</h5>
@@ -113,75 +173,127 @@
                         <h5>Notifications</h5>
                         <br/>
                         <div class="form-group">
-                            <label class="control-label" for="approvenotifications">Approve Notifications</label>
-                            <input type="checkbox" class="form-control" id="approvenotifications" />
-                            <span id="approvenotificationslabel">Off</span>
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-3">
+                                        <label class="control-label" for="approvenotifications">Approve Notifications</label>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <input type="checkbox" class="form-control" id="approvenotifications" />
+                                        <span id="approvenotificationslabel">Off</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
-                <form id="changeName" method="post" action="">
-                    <br/>
-                    <h5>Name</h5>
-                    <br/>
-                    <div class="form-group">
-                        <label class="control-label" for="fullname">Name</label>
-                        <input type="fullname" class="form-control" id="fullname" name="fullname" required/>
+                <br/>
+                <h5>Name</h5>
+                <br/>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-3">
+                            <form id="changeName" method="post" action="">
+                                <div class="form-group">
+                                    <!--label class="control-label" for="fullname">Name</label-->
+                                    <input type="fullname" class="form-control" id="fullname" name="fullname" required/>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-sm-2">
+                            <button id="changeNameSubmit" type="changeName" value="changeName" class="btn btn-primary btn-block onclick=" void(0) "">
+                                Change Name
+                            </button>
+                        </div>
                     </div>
-                </form>
-                <button id="changeNameSubmit" type="changeName" value="changeName" class="btn btn-primary
-                                btn-block onclick=" void(0) "">
-                    Change Name
-                </button>
-                <form id="changeUsername" method="post" action="">
-                    <br/>
-                    <h5>Username</h5>
-                    <br/>
-                    <div class="form-group">
-                        <label class="control-label" for="username">Username</label>
-                        <input type="username" class="form-control" id="username" name="username" required/>
+                </div>
+                <br/>
+                <h5>Username</h5>
+                <br/>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-3">
+                            <form id="changeUsername" method="post" action="">
+                                <div class="form-group">
+                                    <!--label class="control-label" for="username">Username</label-->
+                                    <input type="username" class="form-control" id="username" name="username" required/>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-sm-2">
+                            <button id="changeUsernameSubmit" type="changeUsername" value="changeUsername" class="btn btn-primary btn-block onclick="
+                                void(0) "">
+                                Change Username
+                            </button>
+                        </div>
                     </div>
-                </form>
-                <button id="changeUsernameSubmit" type="changeUsername" value="changeUsername" class="btn
-                                        btn-primary btn-block onclick=" void(0) "">
-                    Change Username
-                </button>
+                </div>
                 <div id="changePasswordCollapse" class="collapse">
-                    <form id="changePassword" method="post" action="">
-                        <br/>
-                        <h5>Change password.</h5>
-                        <br/>
-                        <div class="form-group">
-                            <label class="control-label" for="password">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" required/>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label" for="confirm_password">Confirm Password
-                            </label>
-                            <input type="password" class="form-control" id="confirm_password" name="confirm_password" />
+                    <br/>
+                    <h5>Change password</h5>
+                    <br/>
+                    <form id="changePassword">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <label class="control-label" for="password">Password</label>
+                                        <input type="password" class="form-control" id="password" name="password" required/>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <label class="control-label" for="confirm_password">Confirm</label>
+                                        <input type="password" class="form-control" id="confirm_password" name="confirm_password" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="form-group">
+                                        <label class="control-label" for="changePasswordSubmit">&nbsp;</label>
+                                        <button id="changePasswordSubmit" type="changePassword" value="changePassword" class="btn btn-primary btn-block onclick="
+                                            void(0) "">
+                                            Change Password
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </form>
-                    <button id="changePasswordSubmit" type="changePassword" value="changePassword" class="btn btn-primary btn-block onclick="
-                        void(0) "">
-                        Change Password
-                    </button>
                 </div>
                 <br/>
-                <h5>Delete Account.</h5>
                 <br/>
-                <button id="deleteAccount" type="deleteAccount" value="deleteAccount" class="btn btn-primary btn-block onclick=" void(0)
-                    "">
-                    Delete Account
-                </button>
+                <h5>Delete Account</h5>
+                <br/>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-2">
+                            <button id="deleteAccount" type="deleteAccount" value="deleteAccount" class="btn btn-primary btn-block onclick=" void(0)
+                                "">
+                                Delete Account
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
-
-        <footer class="mastfoot mt-auto">
-            <div class="inner">
-                <p></p>
-            </div>
-        </footer>
     </div>
 
+    <footer>
+        <div class="container">
+            <p>&copy; Colgate 2018. All Rights Reserved.</p>
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a target="_blank" id="privacypolicylink">Privacy</a>
+                </li>
+                <li class="list-inline-item">
+                    <a target="_blank" id="toslink">Terms</a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="help.html">Help</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
 
     <!-- Bootstrap core JavaScript================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

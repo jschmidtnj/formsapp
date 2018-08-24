@@ -5,20 +5,22 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123955306-1"></script>
   <script>
-      window.dataLayer = window.dataLayer || [];
+    window.dataLayer = window.dataLayer || [];
 
-      function gtag() {
-          dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
-      gtag('config', 'UA-123955306-1');
+    gtag('config', 'UA-123955306-1');
   </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="title" content="Workflow">
-  <meta name="description" content="">
+  <meta name="description" content="Build Forms and Approve Flow">
   <meta name="author" content="Joshua Schmidt">
+  <title>Workflow</title>
+
   <link rel="icon" href="assets/icons/favicon.ico">
 
   <title> Bootstrap</title>
@@ -26,46 +28,79 @@
   <!-- Bootstrap core CSS -->
   <script src="assets/js/global/bootstrapcss.js"></script>
 
+  <!-- Custom Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
   <!-- Custom styles for this template -->
-  <link href="assets/css/cover.css" rel="stylesheet">
+  <link href="assets/css/index.css" rel="stylesheet">
 </head>
 
-<body class="text-center">
-  <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-    <header class="masthead mb-auto">
-      <!-- Vuejs: -->
-      <!--div id="header-footer">
-        <testcomponent></testcomponent>
-        <headercomponent></headercomponent>
-        <footercomponent></footercomponent>
-      </div-->
-      <div class="inner">
-        <h3 class="masthead-brand">Workflow</h3>
-        <nav class="nav nav-masthead justify-content-center">
-          <a class="nav-link active" href="index.html">About</a>
-          <a class="nav-link" href="register.html">Sign Up</a>
-          <a class="nav-link" href="login.html">Login</a>
-        </nav>
-      </div>
-    </header>
+<!-- Vuejs: -->
+<!--div id="header-footer">
+  <testcomponent></testcomponent>
+  <headercomponent></headercomponent>
+  <footercomponent></footercomponent>
+</div-->
 
-    <main role="main" class="inner cover">
-      <h1 class="cover-heading">Workflow</h1>
-      <br/>
-      <br/>
-      <p class="lead">Workflow is an application for creating forms with approval chains.</p>
-      <br/>
-      <p class="lead">
-        <a href="register.html" class="btn btn-lg btn-secondary">Get started today.</a>
-      </p>
-    </main>
-
-    <footer class="mastfoot mt-auto">
-      <div class="inner">
-        <p>Footer</p>
+<body id="page-top">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+          <img src="assets/images/colpallogo_black.png" style="width: 200px; margin-right:1em;"/>Workflow
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="register.html">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+        </ul>
       </div>
-    </footer>
-  </div>
+    </div>
+  </nav>
+
+  <header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-lg-5 my-auto">
+          <div class="header-content mx-auto">
+            <h1 class="mb-5">Workflow is an application for creating forms with approval chains.</h1>
+            <a href="register.html" class="btn btn-outline btn-xl js-scroll-trigger">Get started today.</a>
+          </div>
+        </div>
+        <div class="col-lg-7 my-auto">
+          <img src="assets/images/homepage_main.png" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <footer>
+    <div class="container">
+      <p>&copy; Colgate 2018. All Rights Reserved.</p>
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a target="_blank" id="privacypolicylink">Privacy</a>
+        </li>
+        <li class="list-inline-item">
+          <a target="_blank" id="toslink">Terms</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="help.html">Help</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
 
   <script src="assets/js/index/index.js"></script>
 </body>

@@ -61,7 +61,10 @@ body.my-login-page {
 }
 
 .my-login-page .brand img {
-	width: 100%;
+	width: 50px;
+	display: block;
+	margin: auto;
+	margin-top: 18px;
 }
 
 .my-login-page .card-wrapper {

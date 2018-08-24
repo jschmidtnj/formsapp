@@ -65,9 +65,9 @@ function createworkflowSelect() {
                     //console.log(workflowName);
                     workflowSelectString = workflowSelectString + "<option data-tokens=\"" + workflowName + "\" value=\"" + workflowId + "\">" + workflowName + "</option>";
                     countworkflows++;
-                    console.log(createselect, numworkflows, countworkflows);
+                    //console.log(createselect, numworkflows, countworkflows);
                     if (createselect && numworkflows == countworkflows) {
-                        console.log("create workflowselect");
+                        //console.log("create workflowselect");
                         workflowSelectString = workflowSelectString + "</select>";
                         $('#workflowSelectCollapse').append(workflowSelectString);
                         $('#workflowSelect').selectpicker();
@@ -81,7 +81,7 @@ function createworkflowSelect() {
                             $('.workflowSelect').val(window.workflow);
                             $('.selectpicker').selectpicker('refresh');
                         } else {
-                            console.log("update workflow");
+                            //console.log("update workflow");
                             $('.workflowSelect').val(1);
                             $('.workflowSelect').selectpicker('refresh');
                         }
@@ -329,6 +329,10 @@ function getResponseData() {
 }
 
 $(document).on('click touchstart', "#downloadFile", function () {
+
+    $('#toslink').attr('href', config.other.tosUrl);
+    $('#privacypolicylink').attr('href', config.other.privacyPolicyUrl);
+
     var urlArray = [];
     var counturl = 0;
     for (var j = 0; j < window.filesselected.length; j++) {
@@ -484,7 +488,7 @@ $(document).on('click touchstart', ".approveResponse", function () {
                             });
                         }
                         if (i == nextapprovallen - 1 && newStatus == "pending") {
-                            console.log("sending approval email notification");
+                            //console.log("sending approval email notification");
                             var sendEmails = firebase.functions().httpsCallable('sendApprovalEmailNotification');
                             sendEmails({
                                 responseId: responseKey,
@@ -493,8 +497,8 @@ $(document).on('click touchstart', ".approveResponse", function () {
                                 // Read result of the Cloud Function.
                                 //console.log(result);
                                 var statusMessage = result.data.status;
-                                console.log(statusMessage);
-                                console.log("form approval sent to next party");
+                                //console.log(statusMessage);
+                                //console.log("form approval sent to next party");
                             }).catch(function (error) {
                                 // Getting the Error details.
                                 //console.log(error);
@@ -505,7 +509,7 @@ $(document).on('click touchstart', ".approveResponse", function () {
                     setTimeout(function () {
                         if (newStatus == "approved") {
                             //console.log("approved the submission");
-                            console.log("sending approved email notification");
+                            //console.log("sending approved email notification");
                             var sendEmails = firebase.functions().httpsCallable('sendApprovedRejectedEmailNotification');
                             sendEmails({
                                 responseId: responseKey,
@@ -514,8 +518,8 @@ $(document).on('click touchstart', ".approveResponse", function () {
                                 // Read result of the Cloud Function.
                                 //console.log(result);
                                 var statusMessage = result.data.status;
-                                console.log(statusMessage);
-                                console.log("form approved notification sent");
+                                //console.log(statusMessage);
+                                //console.log("form approved notification sent");
                             }).catch(function (error) {
                                 // Getting the Error details.
                                 //console.log(error);
@@ -573,7 +577,7 @@ $(document).on('click touchstart', ".rejectResponse", function () {
             handleError(error);
         }).then(function () {
             //console.log("rejected the submission");
-            console.log("sending rejected email notification");
+            //console.log("sending rejected email notification");
             var sendEmails = firebase.functions().httpsCallable('sendApprovedRejectedEmailNotification');
             sendEmails({
                 responseId: responseKey,
@@ -582,8 +586,8 @@ $(document).on('click touchstart', ".rejectResponse", function () {
                 // Read result of the Cloud Function.
                 //console.log(result);
                 var statusMessage = result.data.status;
-                console.log(statusMessage);
-                console.log("form rejected notification sent");
+                //console.log(statusMessage);
+                //console.log("form rejected notification sent");
             }).catch(function (error) {
                 // Getting the Error details.
                 //console.log(error);
@@ -989,7 +993,7 @@ $(document).ready(function () {
                                 time: timestamp
                             }).then(function () {
                                 if (workflowid !== "") {
-                                    console.log("sending submission email notification");
+                                    //console.log("sending submission email notification");
                                     var sendEmails = firebase.functions().httpsCallable('sendApprovalEmailNotification');
                                     sendEmails({
                                         responseId: window.responseId,
@@ -998,7 +1002,7 @@ $(document).ready(function () {
                                         // Read result of the Cloud Function.
                                         //console.log(result);
                                         var statusMessage = result.data.status;
-                                        console.log(statusMessage);
+                                        //console.log(statusMessage);
                                     }).catch(function (error) {
                                         // Getting the Error details.
                                         //console.log(error);
@@ -1021,7 +1025,7 @@ $(document).ready(function () {
                         handleError(error);
                     });
                 } else {
-                    console.log("already submitted");
+                    //console.log("already submitted");
                 }
             }
 
@@ -1086,7 +1090,7 @@ $(document).ready(function () {
                     //console.log(countiterations, numChildren);
 
                     if (countiterations == numChildren) {
-                        console.log("iterated throguh all children");
+                        //console.log("iterated throguh all children");
                         var updatedSubmission = false;
 
                         function delayUntilReady() {

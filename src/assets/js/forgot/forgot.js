@@ -50,6 +50,9 @@ function handleError(error) {
 
 $(document).ready(function () {
 
+    $('#toslink').attr('href', config.other.tosUrl);
+    $('#privacypolicylink').attr('href', config.other.privacyPolicyUrl);
+
     function resetTheEmail() {
         if ($("#forgotForm").valid()) {
             var formData = $("#forgotForm").serializeArray();

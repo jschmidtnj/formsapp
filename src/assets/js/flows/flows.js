@@ -44,6 +44,10 @@ function handleError(error) {
 var tableInitialized = false;
 
 $(document).ready(function () {
+
+    $('#toslink').attr('href', config.other.tosUrl);
+    $('#privacypolicylink').attr('href', config.other.privacyPolicyUrl);
+
     function getWorkflowData() {
         var ranonce = false;
         firebase.database().ref('access/workflows/workflowsbyuser/' + window.userId).limitToLast(config.other.userviewmax).once('value').then(function (accessWorkflows) {

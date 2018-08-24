@@ -54,7 +54,7 @@ function getResponseData() {
                 $('#responsedatalist').DataTable({
                     responsive: true,
                     order: [
-                        [2, "desc"]
+                        [2, "asc"]
                     ]
                 });
             }
@@ -207,6 +207,9 @@ function deleteSubmission() {
 */
 
 $(document).ready(function () {
+
+    $('#toslink').attr('href', config.other.tosUrl);
+    $('#privacypolicylink').attr('href', config.other.privacyPolicyUrl);
 
     //$(document).on('click touchstart', ".responseDelete", deleteSubmission);
 

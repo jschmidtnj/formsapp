@@ -48,6 +48,9 @@ function handleError(error) {
 
 $(document).ready(function () {
 
+    $('#toslink').attr('href', config.other.tosUrl);
+    $('#privacypolicylink').attr('href', config.other.privacyPolicyUrl);
+
     $.urlParam = function (name) {
         try {
             var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);

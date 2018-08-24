@@ -398,6 +398,9 @@ function createFormGenerator() {
 
 $(document).ready(function () {
 
+    $('#toslink').attr('href', config.other.tosUrl);
+    $('#privacypolicylink').attr('href', config.other.privacyPolicyUrl);
+
     $("#name").focus(function () {
         $(this).select();
     });

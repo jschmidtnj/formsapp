@@ -5,25 +5,34 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123955306-1"></script>
   <script>
-      window.dataLayer = window.dataLayer || [];
+    window.dataLayer = window.dataLayer || [];
 
-      function gtag() {
-          dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
-      gtag('config', 'UA-123955306-1');
+    gtag('config', 'UA-123955306-1');
   </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="assets/icons/favicon.ico">
+  <meta name="title" content="Workflow">
+  <meta name="description" content="Build Forms and Approve Flow">
+  <meta name="author" content="Joshua Schmidt">
+  <title>Edit</title>
 
-  <title>Build Form</title>
+  <link rel="icon" href="assets/icons/favicon.ico">
 
   <!-- Bootstrap core CSS -->
   <script src="assets/js/global/bootstrapcss.js"></script>
+
+  <!-- Custom Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+  <!-- Global Navbar -->
+  <link href="assets/css/global.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="assets/css/edit.css" rel="stylesheet">
@@ -58,32 +67,74 @@
     <header class="masthead mb-auto">
       <div class="inner">
         <h3 class="masthead-brand">Workflow</h3>
-        <nav class="nav nav-masthead justify-content-center">
-          <a class="nav-link active" href="dashboard.html">Dashboard</a>
-          <a class="nav-link" href="user.html">Forms</a>
-          <a class="nav-link" href="flows.html">Workflow</a>
-          <a class="nav-link" href="approve.html">Approve</a>
-          <a class="nav-link" href="settings.html">Settings</a>
-          <a class="nav-link" href="#" id="logoutButton">Logout</a>
-      </nav>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+          <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="index.html">
+              <img src="assets/images/colpallogo_black.png" style="width: 200px; margin-right:1em;" />Workflow
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+              aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              Menu
+              <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="dashboard.html">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="user.html">Forms</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="flows.html">Workflow</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="approve.html">Approve</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="settings.html">Settings</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" id="logoutButton">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <br/>
+        <br/>
+        <br/>
       </div>
     </header>
 
-    <main role="main">
+    <main role="main" class="main">
       <br/>
-      <div class="form-group no-margin">
-          <button id="goBack" class="btn btn-primary btn-block onclick="void(0)"">
-              Back
-          </button>
+      <div class="container">
+        <div class="row justify-content-start">
+          <div class="col-3">
+            <div class="form-group no-margin">
+              <button id="goBack" class="btn btn-primary btn-block onclick=" void(0) "">
+                Back
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
       <br/>
       <br/>
       <p id="saving-status"></p>
       <br/>
       <form id="formInfo" class="collapse">
-        <div class="form-group">
-          <label class="control-label" for="name">Name</label>
-          <input id="name" type="text" class="form-control" name="name" value="Untitled" required autofocus>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-3">
+              <div class="form-group">
+                <label class="control-label" for="name">Name</label>
+                <input id="name" type="text" class="form-control" name="name" value="Untitled" required autofocus>
+              </div>
+            </div>
+          </div>
         </div>
       </form>
       <br/>
@@ -93,26 +144,45 @@
       <div class="collapse display: inline-block" id="workflowSelectCollapse">
         <p>Workflow Select</p>
       </div>
-      <button value="Save" class="btn btn-primary btn-block collapse onclick="void(0)"" id="saveForm">
-        Save
-      </button>
-      <button value="Clear" class="btn btn-primary btn-block collapse onclick="void(0)"" id="clearForm">
-        Clear
-      </button>
-      <button value="View" class="btn btn-primary btn-block collapse onclick="void(0)"" id="viewForm">
-        View
-      </button>
-    </main>
-
-    <footer class="mastfoot mt-auto">
-      <div class="inner">
-        <p>
-          
-          </p>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-3">
+            <button value="Save" class="btn btn-primary btn-block collapse onclick=" void(0) "" id="saveForm">
+              Save
+            </button>
+          </div>
+          <div class="col-3">
+            <button value="Clear" class="btn btn-primary btn-block collapse onclick=" void(0) "" id="clearForm">
+              Clear
+            </button>
+          </div>
+          <br/>
+          <div class="col-3">
+            <button value="View" class="btn btn-primary btn-block collapse onclick=" void(0) "" id="viewForm">
+              View
+            </button>
+          </div>
+        </div>
       </div>
-    </footer>
+    </main>
   </div>
 
+  <footer>
+    <div class="container">
+      <p>&copy; Colgate 2018. All Rights Reserved.</p>
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a target="_blank" id="privacypolicylink">Privacy</a>
+        </li>
+        <li class="list-inline-item">
+          <a target="_blank" id="toslink">Terms</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="help.html">Help</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
 
   <!-- Bootstrap core JavaScript
     ================================================== -->

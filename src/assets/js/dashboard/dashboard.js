@@ -34,6 +34,10 @@ function handleError(error) {
 }
 
 $(document).ready(function () {
+
+    $('#toslink').attr('href', config.other.tosUrl);
+    $('#privacypolicylink').attr('href', config.other.privacyPolicyUrl);
+
     var signed_in_initially = false;
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
@@ -68,8 +72,8 @@ $(document).ready(function () {
                 setTimeout(function () {
                     window.location.href = 'login.html';
                 }, config.other.redirecttimeout);
-               //fast redirect
-               // window.location.href = 'login.html';
+                //fast redirect
+                // window.location.href = 'login.html';
             }
         }
     });
