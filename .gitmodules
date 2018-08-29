@@ -1,1 +1,4 @@
 
+[submodule "wiki"]
+	path = wiki
+	url = ../formsapp.wiki.git
